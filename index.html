@@ -1,12 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="phonecatApp">
 <head>
 	<meta charset="UTF-8">
-	<title>Test</title>
+	<title>Google Phone Gallery</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./stylesheets/style.css">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+	<script src="./javascripts/controllers.js"></script>
 </head>
-<body>
+<body ng-controller="PhoneListCtrl">
 	<h1>Big Title to begin with</h1>
 	<br>
-	<p>small paragraph</p>
+	  <ul>
+    	<li ng-repeat="phone in phones">
+      	{{phone.name}}
+      	<p>{{phone.snippet}}</p>
+      </li>
+    </ul>
+    <p>Hello, {{name}}!</p>
+	<p>Total number of phones: {{phones.length}} </p>
 </body>
 </html>
