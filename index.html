@@ -28,8 +28,9 @@
 			<!--Body content-->
 			<div class="span10">
 				<ul class="phones">
-					<li ng-repeat="phone in phones | filter:query | orderBy: orderProp">
-						<span>{{phone.name}}</span>
+					<li ng-repeat="phone in phones | filter:query | orderBy: orderProp" class="thumbnail">
+						<a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+						<a href="#/phones/{{phone.id}}">{{phone.name}}</a>
 						<p>{{phone.snippet}}</p>
 					</li>
 				</ul>				
@@ -38,6 +39,9 @@
 			<!-- Total content-->
 			<div class="span2">
 				<p>Total number of phones: {{phones.length}} </p>
+				
+				<!-- <p>This is the list in JSON format:</p> -->
+				<!--ul>{{phones | json }}</ul-->
 			</div>
 		</div>		
 	</div>
