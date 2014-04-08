@@ -1,23 +1,42 @@
 <!doctype html>
-<html lang="en" ng-app="phonecatApp">
+<html lang="en" ng-app="phonecatApp" ng-controller="PhoneListCtrl">
 <head>
 	<meta charset="UTF-8">
-	<title>Google Phone Gallery</title>
+	<title ng-bind-template="Phone Gallery: {{query}}">Phone Gallery</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./stylesheets/style.css">
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
 	<script src="./javascripts/controllers.js"></script>
 </head>
-<body ng-controller="PhoneListCtrl">
-	<h1>Big Title to begin with</h1>
-	<br>
-	  <ul>
-    	<li ng-repeat="phone in phones">
-      	{{phone.name}}
-      	<p>{{phone.snippet}}</p>
-      </li>
-    </ul>
-    <p>Hello, {{name}}!</p>
-	<p>Total number of phones: {{phones.length}} </p>
+<body>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span2">
+				<h1>Phone directory</h1>
+			</div>
+			<br>
+				<!--Side bar content -->
+			<div class="span2">
+				Search: <input ng-model="query">
+			</div>
+
+			<!--Body content-->
+			<div class="span10">
+				<ul class="phones">
+					<li ng-repeat="phone in phones | filter:query">
+						{{phone.name}}
+						<p>{{phone.snippet}}</p>
+					</li>
+				</ul>				
+			</div>
+
+			<!-- Total content-->
+			<div class="span2">
+				<p>Total number of phones: {{phones.length}} </p>
+			</div>
+		</div>		
+	</div>
+
+	
 </body>
 </html>
