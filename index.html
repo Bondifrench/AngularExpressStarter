@@ -5,47 +5,14 @@
 	<title>Phone Gallery</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./stylesheets/style.css">
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular-route.js"></script>
+	<script src="./javascripts/app.js"></script>
 	<script src="./javascripts/controllers.js"></script>
 </head>
-<body ng-controller="PhoneListCtrl">
+<body>
 
-	<div class="container-fluid">
-		<div class="row-fluid">	
-			<!--Side bar content -->
-			<div class="span2">
-				Search: <input ng-model="query">
-				Sort by:
-				<select ng-model="orderProp">
-					<option value="name">Alphabetical</option>
-					<option value="age">Newest</option>
-					<option value="-age">Oldest</option>
-				</select>
-			</div>
-			<br>
-			<p>You have chosen the ordering by: {{orderProp}} </p>
-
-			<!--Body content-->
-			<div class="span10">
-				<ul class="phones">
-					<li ng-repeat="phone in phones | filter:query | orderBy: orderProp" class="thumbnail">
-						<a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
-						<a href="#/phones/{{phone.id}}">{{phone.name}}</a>
-						<p>{{phone.snippet}}</p>
-					</li>
-				</ul>				
-			</div>
-
-			<!-- Total content-->
-			<div class="span2">
-				<p>Total number of phones: {{phones.length}} </p>
-				
-				<!-- <p>This is the list in JSON format:</p> -->
-				<!--ul>{{phones | json }}</ul-->
-			</div>
-		</div>		
-	</div>
-
+	<div ng-view></div>
 	
 </body>
 </html>
