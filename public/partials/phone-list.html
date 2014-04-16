@@ -11,11 +11,12 @@
 				<option value="-age">Oldest</option>
 			</select>
 		</div>
-		<br>
-		<p>You have chosen the ordering by: {{orderProp}} </p>
+				<!-- p>You have chosen the ordering by: {{orderProp}} </p -->
 
 			<!--Body content-->
 		<div class="span10">
+			<!--	<input ng-model="userInput">Uppercased: {{userInput | uppercase}}
+			<br> -->
 			<ul class="phones">
 				<li ng-repeat="phone in phones | filter:query | orderBy: orderProp" class="thumbnail">
 					<a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
@@ -26,11 +27,11 @@
 		</div>
 
 			<!-- Total content-->
-		<div class="span2">
+		<!-- div class="span2">
 			<p>Total number of phones: {{phones.length}} </p>
 				
 				<!-- <p>This is the list in JSON format:</p> -->
 				<!--ul>{{phones | json }}</ul-->
-		</div>
+		<!-- /div -->
 	</div>		
 </div>
