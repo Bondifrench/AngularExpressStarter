@@ -1,7 +1,15 @@
-/* app css stylesheet */
+/* style css stylesheet */
 
 body {
   padding-top: 20px;
+}
+
+.phone-images {
+  width: 450px;
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+  float: left;
 }
 
 .phones {
@@ -25,7 +33,6 @@ body {
 /** Detail View **/
 img.phone {
   float: left;
-  border: 1px solid black;
   margin-right: 3em;
   margin-bottom: 2em;
   background-color: white;
@@ -33,6 +40,10 @@ img.phone {
   height: 400px;
   width: 400px;
 }
+
+/*img.phone:first-child {
+  display: block;
+} */
 
 ul.phone-thumbs {
   margin: 0;
@@ -50,6 +61,10 @@ ul.phone-thumbs img {
   height: 100px;
   width: 100px;
   padding: 1em;
+}
+
+ul.phone-thumbs img:hover {
+  cursor: pointer;
 }
 
 ul.specs {
